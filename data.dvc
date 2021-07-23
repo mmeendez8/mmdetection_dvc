@@ -1,12 +1,13 @@
-md5: a47f270485f2b21f4288222eb69e17e8
+md5: 61450df30684986613fcb48fb6f80a7e
 frozen: true
 deps:
 - path: data/
   repo:
     url: git@github.com:mmeendez8/coco_sample.git
-    rev_lock: 7b6dbe3831858e815041a2d18d8b13363940420a
+    rev_lock: c143bc4ce9826044f6ede3096ddce20d820d1009
+    rev: v1.0
 outs:
-- md5: 23b2c11df693de3781c83548fafe9159.dir
+- md5: 6df4d6dc45493f4e548628bc76d7250f.dir
   size: 3285685256
   nfiles: 21840
   path: data
