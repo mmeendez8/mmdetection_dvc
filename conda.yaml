@@ -1,17 +1,20 @@
-name: mmdetection_dvc
+name: mmdetection_dv2
 channels:
   - pytorch
-  - anaconda
   - nvidia
+  - anaconda
+  - conda-forge
 dependencies:
   - python=3.8
   - pytorch=1.9
   - torchvision=0.10.0
-  - cudatoolkit=11.1 
-  - dvc[gdrive]=2.5.4
+  - cudatoolkit=11.1
+  - dvc=2.5.4
+  - dvc-gdrive=2.5.4
   - pip=20.2.4
   - pip:
-    - opencv-contrib-python==4.5.3
+    - pyodi
+    - opencv-python==4.5.3.56
+    - dvclive==0.1.1
     - mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
     - mmdet==2.14.0
-
