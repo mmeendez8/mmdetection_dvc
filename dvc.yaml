@@ -1,0 +1,14 @@
+stages:
+
+  prepare_data:
+    foreach:
+      - train
+      - val
+    do:
+      cmd: python src/prepare_data.py
+        --coco_file data/coco_sample/annotations/split_${item}.json
+        --output_file processed_data/${item}_split_with_ann_id.json
+      deps:
+        - data/coco_sample/annotations/split_${item}.json
+      outs:
+        - processed_data/${item}_split_with_ann_id.json
