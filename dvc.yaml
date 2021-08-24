@@ -10,5 +10,6 @@ stages:
         --output_file processed_data/${item}_split_with_ann_id.json
       deps:
         - data/coco_sample/annotations/split_${item}.json
+        - src/prepare_data.py
       outs:
         - processed_data/${item}_split_with_ann_id.json

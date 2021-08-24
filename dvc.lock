@@ -7,10 +7,13 @@ stages:
     - path: data/coco_sample/annotations/split_val.json
       md5: cc5058b3d49653f66d41e6fb2b1b2297
       size: 2925021
+    - path: src/prepare_data.py
+      md5: cb54001a034fa3afb79a58f0084d7548
+      size: 1078
     outs:
     - path: processed_data/val_split_with_ann_id.json
-      md5: 512cb23c27ae743e7f3f62fe751087ae
-      size: 3901201
+      md5: 46b840659b75ed28a3208f9cd012f21d
+      size: 4253881
   prepare_data@train:
     cmd: python src/prepare_data.py --coco_file data/coco_sample/annotations/split_train.json
       --output_file processed_data/train_split_with_ann_id.json
@@ -18,7 +21,10 @@ stages:
     - path: data/coco_sample/annotations/split_train.json
       md5: 2d48da641f28c60535a5bc3395173046
       size: 11510879
+    - path: src/prepare_data.py
+      md5: cb54001a034fa3afb79a58f0084d7548
+      size: 1078
     outs:
     - path: processed_data/train_split_with_ann_id.json
-      md5: 1915e5d6a6177480c21e76d684592250
-      size: 15385059
+      md5: 396984d6c08dbe55a93b19cc156c44ba
+      size: 16774499

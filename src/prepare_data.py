@@ -22,6 +22,7 @@ def prepare_data(coco_file: str, output_file: str):
         ann["id"] = i
         ann["area"] = ann["bbox"][2] * ann["bbox"][3]
         ann["category_id"] = new_category_id[ann["category_id"]]
+        ann["iscrowd"] = 0
 
     # Add image width and height
     for img in coco["images"]:
