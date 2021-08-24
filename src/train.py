@@ -40,6 +40,9 @@ def update_config_with_dvc_params(base_config):
     """
     params = yaml.safe_load(open("params.yaml"))
 
+    if params is None:
+        return base_config
+
     def _update(config, params):
         for key, value in params.items():
             if isinstance(value, dict):
