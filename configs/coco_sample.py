@@ -43,12 +43,14 @@ data = dict(
         ann_file=data_root + "train_split_with_ann_id.json",
         img_prefix=img_folder,
         pipeline=train_pipeline,
+        classes=CLASSES,
     ),
     val=dict(
         type=dataset_type,
         ann_file=data_root + "val_split_with_ann_id.json",
         img_prefix=img_folder,
         pipeline=test_pipeline,
+        classes=CLASSES,
     ),
 )
 
