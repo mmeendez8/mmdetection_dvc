@@ -25,6 +25,6 @@ stages:
       - processed_data
       - src/train.py
     live:
-      training_metrics:
+      training/metrics:
         summary: true
         html: true

@@ -4,7 +4,7 @@ log_config = dict(
     interval=50,
     hooks=[
         dict(type="TextLoggerHook"),
-        dict(type="DvcliveLoggerHook", path="training_metrics"),
+        dict(type="DvcliveLoggerHook", path="training/metrics"),
     ],
 )
 # yapf:enable
