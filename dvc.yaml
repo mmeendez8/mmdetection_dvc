@@ -13,3 +13,18 @@ stages:
         - src/prepare_data.py
       outs:
         - processed_data/${item}_split_with_ann_id.json
+
+  train:
+    cmd: python src/train.py
+      --dataset configs/coco_sample.py
+      --model configs/retinanet_r50_fpn.py
+      --schedule configs/schedule_1x.py
+      --runtime configs/runtime.py
+    deps:
+      - configs/
+      - processed_data
+      - src/train.py
+    live:
+      training_metrics:
+        summary: true
+        html: true
