@@ -55,3 +55,19 @@ stages:
       md5: ab653fa9eb2774c0cbf0ef55c7124d8a.dir
       size: 45765
       nfiles: 11
+  eval:
+    cmd: python src/eval.py --dataset configs/coco_sample.py --model configs/retinanet_r50_fpn.py
+      --checkpoint_file training/checkpoints/latest.pth --output_dir eval/ --n_samples
+      20 --score_threshold .5
+    deps:
+    - path: src/eval.py
+      md5: fb6365709c568ca65b4c2ebfff18698c
+      size: 1808
+    - path: training/checkpoints/latest.pth
+      md5: d490131393c48a5c5954d31ad5a069a0
+      size: 290936633
+    outs:
+    - path: eval/
+      md5: df87c406f3f917a9dafd51f2f5ba6e08.dir
+      size: 1812233
+      nfiles: 20
