@@ -33,3 +33,17 @@ stages:
         html: true
     params:
       - optimizer.weight_decay
+
+  eval:
+    cmd: python src/eval.py
+      --dataset configs/coco_sample.py
+      --model configs/retinanet_r50_fpn.py
+      --checkpoint_file training/checkpoints/latest.pth
+      --output_dir eval/
+      --n_samples 20
+      --score_threshold .5
+    deps:
+      - src/eval.py
+      - training/checkpoints/latest.pth
+    outs:
+      - eval/

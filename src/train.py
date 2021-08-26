@@ -9,7 +9,7 @@ from mmdet.datasets import build_dataset
 from mmdet.models import build_detector
 
 
-def merge_configs(dataset, model, schedule, runtime):
+def merge_configs(dataset, model, schedule=None, runtime=None):
     """Merge different configs in a single file and updates it with DVC params.
 
     Args:
@@ -22,7 +22,8 @@ def merge_configs(dataset, model, schedule, runtime):
     base_config = dict()
 
     for config_base_file in [dataset, model, schedule, runtime]:
-        base_config.update(Config._file2dict(config_base_file)[0])
+        if config_base_file is not None:
+            base_config.update(Config._file2dict(config_base_file)[0])
 
     base_config = update_config_with_dvc_params(base_config)
 
