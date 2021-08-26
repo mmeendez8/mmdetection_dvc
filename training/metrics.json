@@ -1,0 +1,13 @@
+{
+    "step": 13057,
+    "learning_rate": 1.0000000000000003e-05,
+    "momentum": 0.9,
+    "val": {
+        "bbox_mAP": 0.2,
+        "bbox_mAP_50": 0.371,
+        "bbox_mAP_75": 0.2,
+        "bbox_mAP_s": 0.007,
+        "bbox_mAP_m": 0.148,
+        "bbox_mAP_l": 0.336
+    }
+}

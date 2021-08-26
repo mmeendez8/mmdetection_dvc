@@ -20,11 +20,16 @@ stages:
       --model configs/retinanet_r50_fpn.py
       --schedule configs/schedule_1x.py
       --runtime configs/runtime.py
+      --work_dir training/checkpoints
     deps:
       - configs/
       - processed_data
       - src/train.py
+    outs:
+      - training/checkpoints
     live:
       training/metrics:
         summary: true
         html: true
+    params:
+      - optimizer.weight_decay

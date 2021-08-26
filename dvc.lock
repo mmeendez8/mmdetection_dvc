@@ -28,3 +28,30 @@ stages:
     - path: processed_data/train_split_with_ann_id.json
       md5: 396984d6c08dbe55a93b19cc156c44ba
       size: 16774499
+  train:
+    cmd: python src/train.py --dataset configs/coco_sample.py --model configs/retinanet_r50_fpn.py
+      --schedule configs/schedule_1x.py --runtime configs/runtime.py --work_dir training/checkpoints
+    deps:
+    - path: configs/
+      md5: 7e8cc593c5d5eac056cf226ebaa1c959.dir
+      size: 4197
+      nfiles: 4
+    - path: processed_data
+      md5: 19d9cecb424ca4f5006191fe994686dd.dir
+      size: 21028438
+      nfiles: 3
+    - path: src/train.py
+      md5: 14d363430cd499393a984241c9baf563
+      size: 2630
+    params:
+      params.yaml:
+        optimizer.weight_decay: 0.001
+    outs:
+    - path: training/checkpoints
+      md5: 15803a2e3b280fd402b182ff943c604c.dir
+      size: 872855903
+      nfiles: 4
+    - path: training/metrics
+      md5: ab653fa9eb2774c0cbf0ef55c7124d8a.dir
+      size: 45765
+      nfiles: 11
